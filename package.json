@@ -1,5 +1,5 @@
 {
-  "name": "pa",
+  "name": "@ch1c0t/pa",
   "main": "./lib/main.js",
   "exports": {
     "require": "./lib/main.js",
