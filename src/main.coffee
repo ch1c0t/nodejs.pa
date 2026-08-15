@@ -1,4 +1,13 @@
 os = require 'os'
 
-exports.Pa =
-  home: os.homedir()
+home = os.homedir()
+
+Pa =
+  home: home
+  local: "#{home}/.local"
+
+Pa.share = "#{Pa.local}/share"
+
+module.exports = {
+  Pa
+}
