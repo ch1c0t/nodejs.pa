@@ -1,8 +1,9 @@
 { Pa } = require '@ch1c0t/pa'
 
-describe Pa, ->
+describe 'Pa', ->
   it 'provides Pa.home', ->
     os = require 'os'
+
     expect(Pa.home.toString()).toBe os.homedir()
     expect("#{Pa.home}").toBe os.homedir()
 
@@ -11,3 +12,12 @@ describe Pa, ->
 
   it 'provides Pa.share', ->
     expect("#{Pa.share}").toBe "#{Pa.local}/share"
+
+  describe 'bow', ->
+    it 'resolves ~', ->
+      pa = Pa("~/.local/share")
+      expect("#{pa}").toBe Pa.share
+
+    it 'resolves .', ->
+      string = Pa('spec').toString()
+      expect(string).toBe "#{process.cwd()}/spec"
