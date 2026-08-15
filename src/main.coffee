@@ -14,8 +14,10 @@ os = require 'os'
 home = os.homedir()
 
 Pa.home = home
+Pa.config = "#{home}/.config"
 Pa.local = "#{home}/.local"
 Pa.share = "#{Pa.local}/share"
+Pa.state = "#{Pa.local}/state"
 
 module.exports = {
   Pa
